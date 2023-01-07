@@ -7,6 +7,9 @@ import musicInsetIconURL from './music/music-small.svg';
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
 
+import nftIconURL from './nft/nft.png';
+import nftInsetIconURL from './nft/nft-small.svg';
+
 import videoSensingIconURL from './videoSensing/video-sensing.png';
 import videoSensingInsetIconURL from './videoSensing/video-sensing-small.svg';
 
@@ -83,6 +86,26 @@ export default [
                 defaultMessage="Draw with your sprites."
                 description="Description for the 'Pen' extension"
                 id="gui.extension.pen.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="NFT Collection Utilities"
+                description="Name for the 'NFT' extension"
+                id="gui.extension.nft.name"
+            />
+        ),
+        extensionId: 'nft',
+        iconURL: nftIconURL,
+        insetIconURL: nftInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Create NFTs"
+                description="Description for the 'nft' extension"
+                id="gui.extension.nft.description"
             />
         ),
         featured: true

@@ -112,7 +112,7 @@ module.exports = [
         module: {
             rules: base.module.rules.concat([
                 {
-                    test: /\.(svg|png|wav|gif|jpg)$/,
+                    test: /\.(svg|png|wav|mp3|gif|jpg)$/,
                     loader: 'file-loader',
                     options: {
                         outputPath: 'static/assets/'
@@ -138,8 +138,7 @@ module.exports = [
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'gui'],
                 template: 'src/playground/index.ejs',
-                title: 'Scratch 3.0 GUI',
-                sentryConfig: process.env.SENTRY_CONFIG ? '"' + process.env.SENTRY_CONFIG + '"' : null
+                title: 'Scratch 3.0 GUI'
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'blocksonly'],
@@ -188,7 +187,8 @@ module.exports = [
                 patterns: [
                     {
                         from: 'extension-worker.{js,js.map}',
-                        context: 'node_modules/scratch-vm/dist/web'
+                        context: 'node_modules/scratch-vm/dist/web',
+                        noErrorOnMissing: true
                     }
                 ]
             })
@@ -214,7 +214,7 @@ module.exports = [
             module: {
                 rules: base.module.rules.concat([
                     {
-                        test: /\.(svg|png|wav|gif|jpg)$/,
+                        test: /\.(svg|png|wav|mp3|gif|jpg)$/,
                         loader: 'file-loader',
                         options: {
                             outputPath: 'static/assets/',
@@ -236,7 +236,8 @@ module.exports = [
                     patterns: [
                         {
                             from: 'extension-worker.{js,js.map}',
-                            context: 'node_modules/scratch-vm/dist/web'
+                            context: 'node_modules/scratch-vm/dist/web',
+                            noErrorOnMissing: true
                         }
                     ]
                 }),
